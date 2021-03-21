@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game</title>
+    <style>
+        #main-image-wrapper { text-align: center; }
+        #main-image { max-height: 30vh; }
+        #choices {
+            display: grid;
+            justify-items: center;
+            grid-auto-flow: column;
+            gap: 2rem;
+        }
+        #choices > img { max-height: 25vh; }
+        #choice-result {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 2rem;
+        }
+        #try-again {
+            cursor: pointer;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main image that the user will try to match -->
+    <div id="main-image-wrapper">
+        <img id="main-image" alt="main image">
+    </div>
+    
+    <!-- List of images that the user will choose from -->
+    <div id="choices">
+        <img alt="choice image 1" id="choice1" onClick="choiceSelected(this.id)">
+        <img alt="choice image 2" id="choice2" onClick="choiceSelected(this.id)">
+        <img alt="choice image 3" id="choice3" onClick="choiceSelected(this.id)">
+    </div>
+
+    <!-- When the user clicks a choice, this will display the result -->
+    <div id="choice-result"></div>
+
+    <!-- This link will allow the user to run the game again after they choose, or if the game times out -->
+    <a id="try-again" onClick="main()">Try again</a>
+
+    <!-- This needs to be called after all of the elements have been rendered on the page -->
+    <script src="script.js"></script>
+</body>
+</html>
